@@ -1,5 +1,4 @@
- # အစ်ကိုပေးထားတဲ့ Data အသစ်တွေအကုန်လုံး ဒီထဲမှာ ပေါင်းထည့်ထားပါတယ်
-        self.all_data = [
+
             # --- 256 (A group) ---
             { "ic": "B816 - KM8F9001JA", "group": "256 (A group)" },
             { "ic": "H9HQ21AFAMAD", "group": "256 (A group)" },
@@ -324,4 +323,4 @@
             { "ic": "JY974", "group": "TP (group)" }
         ]
         
-        self.init_ui()
+    
