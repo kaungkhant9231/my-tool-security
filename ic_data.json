@@ -1,5 +1,5 @@
 
-            # --- 256 (A group) ---
+      
             { "ic": "B816 - KM8F9001JA", "group": "256 (A group)" },
             { "ic": "H9HQ21AFAMAD", "group": "256 (A group)" },
             { "ic": "H9HQ22AFAMD", "group": "256 (A group)" },
@@ -13,7 +13,7 @@
             { "ic": "H9QT1GGBN6-X129", "group": "256 (A group)" },
             { "ic": "H9QT1G6DN6-X132", "group": "256 (A group)" },
             
-            # --- 256 (B group) ---
+      
             { "ic": "BBO1-KM2B8001CM", "group": "256 (B group)" },
             { "ic": "H9HQ21AECMAD", "group": "256 (B group)" },
             { "ic": "H9HQ22AECMMD", "group": "256 (B group)" },
@@ -24,7 +24,6 @@
             { "ic": "JZ397", "group": "256 (B group)" },
             { "ic": "JZ521", "group": "256 (B group)" },
 
-            # --- 705 (A group) ---
             { "ic": "B813-KM8V7001JA", "group": "705 (A group)" },
             { "ic": "B810 - KMV7001JM", "group": "705 (A group)" },
             { "ic": "B813 - KM8V7001JM", "group": "705 (A group)" },
@@ -43,7 +42,6 @@
             { "ic": "JZ387", "group": "705 (A group)" },
             { "ic": "B814-KMAG9001PM", "group": "705 (A group)" },
 
-            # --- B705 (B group) ---
             { "ic": "B706-KM2V7001CM", "group": "B705 (B group)" },
             { "ic": "B705-KM3V6001CM", "group": "B705 (B group)" },
             { "ic": "B708-KM3V6001CA", "group": "B705 (B group)" },
@@ -60,7 +58,6 @@
             { "ic": "H9QTØGECN6-X145", "group": "B705 (B group)" },
             { "ic": "B622-KM5V8001DM", "group": "B705 (B group)" },
 
-            # --- 705 (C group) ---
             { "ic": "B620-KMDV6001DM", "group": "705 (C group)" },
             { "ic": "B620-KMDV6001DA", "group": "705 (C group)" },
             { "ic": "JZ103", "group": "705 (C group)" },
@@ -79,7 +76,7 @@
             { "ic": "B424-KM5L9001DM", "group": "705 (C group)" },
 
 
-               # --- 515 Group ---
+
             { "ic": "H9AG9G5ANB X100 147A", "group": "515 (group)" },
             { "ic": "H9HP52ACPMMO", "group": "515 (group)" },
             { "ic": "H9HP52ACPMAD", "group": "515 (group)" },
@@ -108,7 +105,7 @@
 
 
 
-              # --- TP Group ---
+ 
             { "ic": "H9TQ64A8GTMC", "group": "TP (group)" },
             { "ic": "B-214 KMFNX0012M", "group": "TP (group)" },
             { "ic": "B-214 KMFN60012M", "group": "TP (group)" },
@@ -129,7 +126,6 @@
 
 
 
-            # --- Mi-256 GB (group) ---
             { "ic": "KLUEG8U1EA- BOC1", "group": "Mi-256 GB (group)" },
             { "ic": "KLUEG8UHDB-C2D1", "group": "Mi-256 GB (group)" },
             { "ic": "JZ 369", "group": "Mi-256 GB (group)" },
@@ -152,7 +148,6 @@
             { "ic": "YMEC9B0TE3A2C3", "group": "Mi-256 GB (group)" },
             { "ic": "HN8T162EHKX04134Y", "group": "Mi-256 GB (group)" },
 
-            # --- Mi-64GB (group) ---
             { "ic": "H26M74002HMR", "group": "Mi-64GB (group)" },
             { "ic": "HN8G962EHK", "group": "Mi-64GB (group)" },
             { "ic": "JZ 160", "group": "Mi-64GB (group)" },
@@ -182,10 +177,9 @@
             { "ic": "THGAF4G9N4LBAIR", "group": "Mi-64GB (group)" },
 
 
-            #256 GB 
+
             { "ic": "KLUEG8UHDB-C2D1", "group": "Mi-256 GB (group)" },
 
-            #128GB
             { "ic": "HN8T061ZGK X012", "group": "Mi-128GB (group)" },
             { "ic": "KLUDG4UHDB-B2E1", "group": "Mi-128GB (group)" },
             { "ic": "KLUDG4UHDC-B0E1", "group": "Mi-128GB (group)" },
@@ -203,11 +197,10 @@
             { "ic": "JZ 447", "group": "Mi-128GB (group)" },
 
 
-             #64GB
 
             { "ic": "KLMCG2UCTB-B041", "group": "Mi-64GB (group)" },
 
-           # 32GB
+    
             { "ic": "KLMBG2JETD-BO41", "group": "Mi-32GB (group)" },
             { "ic": "KLUBG4G1CE-BOB1", "group": "Mi-32GB (group)" },
             { "ic": "KLMBG46END-BO31", "group": "Mi-32GB (group)" },
@@ -221,7 +214,7 @@
             { "ic": "H28U62301AMR", "group": "Mi-32GB (group)" },
             { "ic": "KLMBG2JENB-BO41", "group": "Mi-32GB (group)" },
 
-            # --- 305 (group) ---
+            
             { "ic": "JZ 089", "group": "305 (group)" },
             { "ic": "TYDOHH21662RA", "group": "305 (group)" },
             { "ic": "B 305", "group": "305 (group)" },
@@ -239,7 +232,7 @@
             { "ic": "B410-KMK8U000VM", "group": "305 (group)" },
             { "ic": "B419-KMQ310006A", "group": "305 (group)" },
 
-            # --- 614 (group) ---
+            
             { "ic": "B614-KMRX1000BM", "group": "614 (group)" },
             { "ic": "JZ 025", "group": "614 (group)" },
             { "ic": "JZ 050", "group": "614 (group)" },
@@ -263,7 +256,7 @@
             { "ic": "B421-KMGD6001BM", "group": "614 (group)" },
             { "ic": "B419-KMQX60013A", "group": "614 (group)" },
 
-            # --- Mi-128GB (group) ---
+           
             { "ic": "JZ 156", "group": "Mi-128GB (group)" },
             { "ic": "JZ 159", "group": "Mi-128GB (group)" },
             { "ic": "JZ 144", "group": "Mi-128GB (group)" },
@@ -285,7 +278,7 @@
             { "ic": "THGAF8T0T43BAIR", "group": "Mi-128GB (group)" },
             { "ic": "KLUDG8V1EE-B0C1", "group": "Mi-128GB (group)" },
 
-            # --- 17BA / 6580A / 515 / TP ---
+           
             { "ic": "JY932", "group": "17BA (group)" },
             { "ic": "JY950", "group": "17BA (group)" },
             { "ic": "JZ 011", "group": "17BA (group)" },
