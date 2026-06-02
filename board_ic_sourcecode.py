@@ -13,7 +13,7 @@ CONFIG_FILE = "activation_config.txt"
 from datetime import datetime
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                              QHBoxLayout, QLineEdit, QLabel, QScrollArea, 
-                             QGridLayout, QFrame,QInputDialog, QMessageBox,QDialog, QPushButton, QTextEdit, QFileDialog) # <--- ဒီအဆုံးက QPushButton ပါဖို့လိုပါတယ်
+                             QGridLayout, QFrame,QInputDialog, QMessageBox,QDialog, QPushButton, QTextEdit, QFileDialog, QTextBrowser) # <--- ဒီအဆုံးက QPushButton ပါဖို့လိုပါတယ်
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
@@ -339,7 +339,7 @@ class KKZAIForm(QDialog):
 class KKZMobileTool(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("KK Board-Number Check List - IC FINDER PRO")
+        self.setWindowTitle("KK Board-Number Check List - IC FINDER PRO  V2.0 ")
         self.resize(1000, 800)
         self.setStyleSheet("QMainWindow { background-color: #f1f5f9; }")
         
@@ -504,6 +504,69 @@ class KKZMobileTool(QMainWindow):
         tg_btn.setStyleSheet("background-color: #0088cc; color: white; font-weight: bold; border-radius: 6px; padding: 6px 12px; font-size: 11px;")
         tg_btn.clicked.connect(lambda: webbrowser.open("https://t.me/kaungkhant9737"))
         btn_vbox.addWidget(tg_btn)
+
+
+
+
+        # 📌 ==================== [NEW: GITHUB ANNOUNCEMENT NOTI BOX] ====================
+        self.noti_box = QFrame()
+        self.noti_box.setFixedWidth(175)  # ညာဘက်အခြမ်း ခလုတ်တွေနဲ့ အနံညီအောင် ညှိထားခြင်း
+        self.noti_box.setFixedHeight(110)
+        self.noti_box.setStyleSheet("""
+            QFrame {
+                background-color: #fffbeb; 
+                border: 1px solid #fef3c7; 
+                border-radius: 8px;
+            }
+        """)
+        noti_layout = QVBoxLayout(self.noti_box)
+        noti_layout.setContentsMargins(6, 4, 6, 4)
+        
+        noti_title = QLabel("📢 Announcement NOTI")
+        noti_title.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
+        noti_title.setStyleSheet("color: #b45309; border: none;") # Frame ဘောင်စတိုင် မပတ်အောင် border:none ခံရပါတယ်
+        noti_layout.addWidget(noti_title)
+        
+        # 📋 User က Copy ကူးနိုင်ရန်နှင့် Link နှိပ်နိုင်ရန် QTextBrowser ပြောင်းသုံးခြင်း
+        self.noti_text = QTextBrowser()
+        self.noti_text.setOpenExternalLinks(True)  # Link ပါလာရင် Browser မှာ တန်းပွင့်စေရန်
+        self.noti_text.setFont(QFont("Segoe UI", 9))
+        self.noti_text.setStyleSheet("""
+            QTextBrowser {
+                color: #78350f;
+                background-color: transparent;
+                border: none;
+            }
+        """)
+        # စာသားမလာခင် ခေတ္တပြထားမည့်စာ
+        self.noti_text.setText("Loading announcement...") 
+        noti_layout.addWidget(self.noti_text)
+        
+        btn_vbox.addWidget(self.noti_box)
+
+        # 🌐 GitHub Raw Link ကနေ စာသားလှမ်းဆွဲမည့် Thread Function
+        def fetch_announcement():
+            try:
+                raw_url = "https://raw.githubusercontent.com/kaungkhant9231/my-tool-security/refs/heads/main/announcementnoti.txt"
+                # Cache မငြိအောင် time parameter ထည့်ပြီး လှမ်းခေါ်ခြင်း
+                response = requests.get(f"{raw_url}?v={int(time.time())}", timeout=5)
+                if response.status_code == 200:
+                    # ရလာတဲ့ စာသားထဲမှာ Link တွေပါရင် အလိုအလျောက် နှိပ်လို့ရအောင် Format ပြောင်းပေးခြင်း
+                    text_content = response.text.strip()
+                    
+                    # UI Thread ဘက်ကို စာသားပြန်တင်ပေးခြင်း
+                    from PyQt6.QtCore import QMetaObject, Q_ARG
+                    QMetaObject.invokeMethod(self.noti_text, "setText", 
+                                           Qt.ConnectionType.QueuedConnection, 
+                                           Q_ARG(str, text_content))
+                else:
+                    self.noti_text.setText("Failed to load NOTI.")
+            except:
+                self.noti_text.setText("Connection error.")
+
+        # Tool ကြီး တုံ့ခိုင်းမသွားအောင် နောက်ကွယ် Thread ကနေ လှမ်းဖတ်ခိုင်းခြင်း
+        threading.Thread(target=fetch_announcement, daemon=True).start()
+        # =========================================================================
     
         # ခလုတ် Layout တစ်ခုလုံးကို header_layout ထဲ ထည့်ပေးလိုက်ခြင်း
         header_layout.addLayout(btn_vbox)
