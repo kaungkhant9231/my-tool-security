@@ -456,10 +456,11 @@ class KKZMobileTool(QMainWindow):
         import webbrowser
           # Header Layout အသစ်လုပ်ခြင်း
         header_layout = QHBoxLayout()
-    
+        header_layout.setContentsMargins(0, 0, 0, 0)
           # ဘယ်ဘက်: Title + Dev Name
         title_vbox = QVBoxLayout()
         header_text = QLabel("KK Board Number Check lists")
+        title_vbox.setContentsMargins(0, 0, 0, 0)
         header_text.setStyleSheet("font-size: 24px; font-weight: bold; color: #1e293b;")
         dev_text = QLabel("Developed by Kaung Khant")
         dev_text.setStyleSheet("font-size: 13px; color: #64748b; font-style: italic;")
@@ -607,14 +608,39 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     hwid = KKZActivation.get_hwid()
 
+    
 
-    # ၁။ Crack tool တွေ ဖွင့်ထားလား အရင်စစ်မယ်
-    check_illegal_tools()
+    import ctypes
+    try:
+        myappid = 'kkz.tool' 
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+    except:
+        pass
+
+    # 📌 ၂။ အစ်ကိုပေးတဲ့ Link အသစ်ကပုံကို logo.png အဖြစ် အသေအချာ ဒေါင်းလုဒ်ဆွဲယူခြင်း
+    import urllib.request
+    from PyQt6.QtGui import QIcon
     
-    # ၂။ HWID ယူမယ်၊ Ban စစ်မယ်၊ Activation ဆက်သွားမယ်
-    hwid = KKZActivation.get_hwid()
-    check_remote_ban(hwid)
+    try:
+        # အစ်ကိုပေးထားသော လင့်အသစ်သို့ ပြောင်းလဲထားပါသည်
+        icon_url = "https://img.icons8.com/?size=160&id=2uBo6CAEOnCH&format=png"
+        req = urllib.request.Request(icon_url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req) as response, open("logo.png", "wb") as out_file:
+            out_file.write(response.read())
+    except:
+        pass # အင်တာနက်မရှိရင်လည်း Error မတက်စေရန်
+
+    # 📌 ၃။ ဒေါင်းလုဒ်ရလာတဲ့ logo.png ဖိုင်ကို Icon အဖြစ် တိုက်ရိုက် သတ်မှတ်ခြင်း
+    app_icon = QIcon("logo.png") if os.path.exists("logo.png") else QIcon()
+    if not app_icon.isNull():
+        app.setWindowIcon(app_icon)
     
+
+
+    
+    
+    
+
     # --- Activation Dialog ဆောက်ခြင်း ---
     activation_dialog = QDialog()
     activation_dialog.setWindowTitle("KKZ Mobile Tool Activation")
