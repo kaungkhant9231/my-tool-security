@@ -489,7 +489,7 @@ class KKZMobileTool(QMainWindow):
         submit_main_layout.setSpacing(4)
 
         # အပေါ်က စာသားအကျဉ်းလေး
-        info_label = QLabel("💡 Tool ထဲမှာမပါတဲ့ IC Number များကို Send to Admin သို့ ပေးပို့ပြီး အကြံပြုနိုင်ပါသည်။ ယခု Tool တွင် ထပ်မံထည့်သွင်းပေးသွားပါမည်။ တခြားသော အကြံပြုချက်များလဲ ပေးပို့နိုင်ပါသည်။")
+        info_label = QLabel("💡 Tool ထဲမှာမပါတဲ့ IC Number များကို Send to Admin သို့ ပေးပို့ပြီး အကြံပြုနိုင်ပါသည်။ ယခု Tool တွင် ထပ်မံထည့်သွင်းပေးသွားပါမည်။ တခြားသော အကြံပြုချက်များကိုလဲ ic နဲ့ group box မှာပဲ ရေးပီးပေးပို့နိုင်ပါသည်။")
         info_label.setWordWrap(True) # စာသားကို Box အနံအတိုင်း အလိုအလျောက် အောက်ရွှေ့ခိုင်းတာပါ
         info_label.setStyleSheet("color: #475569; font-size: 10px; font-weight: 500; border: none; background: transparent;")
         submit_main_layout.addWidget(info_label)
