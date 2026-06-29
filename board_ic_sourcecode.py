@@ -9,6 +9,7 @@ import psutil
 import time
 from PIL import Image
 import google.generativeai as genai
+from PyQt6.QtCore import Qt, pyqtSignal  # <-- pyqtSignal ပါအောင် ထည့်ပေးပါ
 CONFIG_FILE = "activation_config.txt"
 from datetime import datetime
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
@@ -337,6 +338,7 @@ class KKZAIForm(QDialog):
             
     # ⚠️ Class အဖွင့်စာကြောင်း ရှိနေဖို့ အရမ်းအရေးကြီးပါတယ်ဗျာ
 class KKZMobileTool(QMainWindow):
+    submit_finished = pyqtSignal(bool, str) # (အောင်မြင်မှုအခြေအနေ True/False, စာသား)
     def __init__(self):
         super().__init__()
         self.setWindowTitle("KK Board-Number Check List - IC FINDER PRO  V2.0 ")
@@ -348,6 +350,10 @@ class KKZMobileTool(QMainWindow):
         
         # 🌐 Web ပေါ်ကနေ ဒေတာကို RAM ပေါ် တိုက်ရိုက်ဆွဲတင်ပြီး self.all_data ထဲ တန်းသိမ်းမည်
         self.all_data = self.fetch_ic_data_from_web()
+
+
+        # Signal ကနေ အလုပ်လုပ်မည့် Function ကို ချိတ်ဆက်ခြင်း
+        self.submit_finished.connect(self.on_submit_finished)
         
         # 🏛️ မူရင်း UI ဆောက်တဲ့ လိုင်း
         self.init_ui()
@@ -467,6 +473,62 @@ class KKZMobileTool(QMainWindow):
         title_vbox.addWidget(header_text)
         title_vbox.addWidget(dev_text)
         header_layout.addLayout(title_vbox)
+
+
+        # =========================================================================
+        # 📌 [NEW: USER IC SUBMIT BOX] - Check Update ရဲ့ ဘယ်ဘက်မှာ ထားရှိမည့်အပိုင်း
+        # =========================================================================
+        # === ဒီကုဒ်တုံးလေးနဲ့ပဲ အစားထိုးလိုက်ပါ ===
+        submit_box = QFrame()
+        submit_box.setFixedWidth(460)  # Box အနံကို သေးသေးကျစ်ကျစ်လေးပဲ ကန့်သတ်ထားပါတယ်
+        submit_box.setStyleSheet("QFrame { background-color: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; }")
+        
+        # အပေါ်အောက်စီမည့် Layout
+        submit_main_layout = QVBoxLayout(submit_box)
+        submit_main_layout.setContentsMargins(5, 3, 5, 4)  
+        submit_main_layout.setSpacing(4)
+
+        # အပေါ်က စာသားအကျဉ်းလေး
+        info_label = QLabel("💡 Tool ထဲမှာမပါတဲ့ IC Number များကို Send to Admin သို့ ပေးပို့ပြီး အကြံပြုနိုင်ပါသည်။ ယခု Tool တွင် ထပ်မံထည့်သွင်းပေးသွားပါမည်။ တခြားသော အကြံပြုချက်များလဲ ပေးပို့နိုင်ပါသည်။")
+        info_label.setWordWrap(True) # စာသားကို Box အနံအတိုင်း အလိုအလျောက် အောက်ရွှေ့ခိုင်းတာပါ
+        info_label.setStyleSheet("color: #475569; font-size: 10px; font-weight: 500; border: none; background: transparent;")
+        submit_main_layout.addWidget(info_label)
+
+        # အောက်က Input နှင့် ခလုတ်များ (ဘေးတိုက်စီမည့် Layout)
+        submit_layout = QHBoxLayout()
+        submit_layout.setSpacing(6)
+
+        self.user_ic_input = QLineEdit()
+        self.user_ic_input.setPlaceholderText("EMMC IC ပေါ် ကနံပါတ် ")
+        self.user_ic_input.setFixedWidth(140)
+        self.user_ic_input.setStyleSheet("padding: 4px; border: 1px solid #94a3b8; border-radius: 4px; font-size: 11px; background-color: white;")
+        
+        self.user_gp_input = QLineEdit()
+        self.user_gp_input.setPlaceholderText("Group or ဘယ်အုပ်စုဝင် ")
+        self.user_gp_input.setFixedWidth(130)
+        self.user_gp_input.setStyleSheet("padding: 4px; border: 1px solid #94a3b8; border-radius: 4px; font-size: 11px; background-color: white;")
+
+        self.user_sent_btn = QPushButton("🚀 Send to Admin")
+        self.user_sent_btn.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.user_sent_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #059669; color: white; font-weight: bold; 
+                border-radius: 4px; padding: 5px 10px; font-size: 11px; border: none;
+            }
+            QPushButton:disabled { background-color: #94a3b8; color: #f1f5f9; }
+        """)
+        self.user_sent_btn.clicked.connect(self.submit_ic_to_admin)
+
+        submit_layout.addWidget(self.user_ic_input)
+        submit_layout.addWidget(self.user_gp_input)
+        submit_layout.addWidget(self.user_sent_btn)
+        submit_layout.addStretch()
+
+        submit_main_layout.addLayout(submit_layout)
+        header_layout.addWidget(submit_box)
+        # ==========================================
+
+
     
         header_layout.addStretch()
  
@@ -527,6 +589,11 @@ class KKZMobileTool(QMainWindow):
         noti_title.setFont(QFont("Segoe UI", 10, QFont.Weight.Bold))
         noti_title.setStyleSheet("color: #b45309; border: none;") # Frame ဘောင်စတိုင် မပတ်အောင် border:none ခံရပါတယ်
         noti_layout.addWidget(noti_title)
+
+
+
+
+     
         
         # 📋 User က Copy ကူးနိုင်ရန်နှင့် Link နှိပ်နိုင်ရန် QTextBrowser ပြောင်းသုံးခြင်း
         self.noti_text = QTextBrowser()
@@ -604,6 +671,83 @@ class KKZMobileTool(QMainWindow):
         msg.setInformativeText("ဒီနေရာမှာ Local Gemini (သို့) OpenAI APIs တွေနဲ့ ချိတ်ဆက်ဖို့ ပြင်ဆင်နေပါတယ်ဗျာ။")
         msg.setStyleSheet("font-size: 13px;")
         msg.exec()
+
+
+
+
+
+
+
+    def submit_ic_to_admin(self):
+        """ User ပို့လိုက်တဲ့ IC ကို Token အသစ်ဖြင့် Telegram Bot ဆီ လှမ်းပို့ပေးမည့် Function """
+        ic_text = self.user_ic_input.text().strip()
+        gp_text = self.user_gp_input.text().strip()
+
+        if not ic_text or not gp_text:
+            QMessageBox.warning(self, "Input Error", "ကျေးဇူးပြု၍ IC Number နှင့် Group နှစ်ခုလုံးကို ဖြည့်စွက်ပေးပါဗျာ။")
+            return
+
+        # 🔑 အစ်ကို့ရဲ့ Bot Token အသစ်နဲ့ Chat ID
+        NEW_BOT_TOKEN = "8899493617:AAEt0qckH5amXsQjB5KPcIqsCkVqnR2pU5Y"      
+        NEW_CHAT_ID = "5779367254"          
+
+        # ⏳ ၁။ ပို့နေစဉ်အတွင်း ခလုတ်ကို ပိတ်ထားခြင်း
+        self.user_sent_btn.setEnabled(False)
+        self.user_sent_btn.setText("⏳ Sending...")
+
+        def send_thread():
+            try:
+                user_hwid = KKZActivation.get_hwid()
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                report = (
+                    "📥 **New IC Request Added!**\n\n"
+                    f"🔢 **IC Number:** `{ic_text}`\n"
+                    f"📁 **Group Name:** `{gp_text}`\n"
+                    f"👤 **Requested HWID:** `{user_hwid}`\n"
+                    f"⏰ **Time:** {current_time}\n"
+                    "------------------------"
+                )
+                
+                url = f"https://api.telegram.org/bot{NEW_BOT_TOKEN}/sendMessage"
+                payload = {"chat_id": NEW_CHAT_ID, "text": report, "parse_mode": "Markdown"}
+                response = requests.post(url, data=payload, timeout=7)
+
+                if response.status_code == 200:
+                    # အောင်မြင်ရင် Main UI Thread ဆီသို့ True ပို့ပေးမယ်
+                    self.submit_finished.emit(True, "✅ Sent Successfully")
+                else:
+                    self.submit_finished.emit(False, "❌ Error")
+            except Exception as e:
+                print(f"Thread Error: {e}")
+                self.submit_finished.emit(False, "❌ Error")
+
+        # Thread ခွဲပြီး နောက်ကွယ်ကနေ ပို့ခိုင်းခြင်း
+        threading.Thread(target=send_thread, daemon=True).start()
+
+    def on_submit_finished(self, success, message):
+        """ Telegram ပို့ပြီးစီးသွားလျှင် Main UI ဘက်ကနေ စိတ်ချလက်ချ ခလုတ်ပြောင်းလဲပေးမည့်နေရာ """
+        self.user_sent_btn.setText(message)
+        
+        if success:
+            # အောင်မြင်ရင် Input တွေကို ရှင်းပစ်မယ်
+            self.user_ic_input.clear()
+            self.user_gp_input.clear()
+            
+            # ၃ စက္ကန့်ကြာရင် ခလုတ်ကို နဂိုအတိုင်း (🚀 Send to Admin) ပြန်ပြင်ပေးမည့် Timer
+            from PyQt6.QtCore import QTimer
+            QTimer.singleShot(3000, lambda: [
+                self.user_sent_btn.setEnabled(True),
+                self.user_sent_btn.setText("🚀 Send to Admin")
+            ])
+        else:
+            # မအောင်မြင်ရင် ခလုတ်ချက်ချင်းပြန်ဖွင့်ပေးမယ်
+            self.user_sent_btn.setEnabled(True)
+            self.user_sent_btn.setText("🚀 Send to Admin")
+            QMessageBox.critical(self, "Failed", "Telegram သို့ ပို့ဆောင်ရခြင်း မအောင်မြင်ပါ။ အင်တာနက် သို့မဟုတ် VPN စစ်ဆေးပေးပါ။")
+
+
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     hwid = KKZActivation.get_hwid()
