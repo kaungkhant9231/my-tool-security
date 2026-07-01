@@ -10,7 +10,7 @@
   { "ic": "BG01-KMJS9001RM", "group": "256 (A group)" },
   { "ic": "H9QT1GGCN6-X147", "group": "256 (A group)" },
   { "ic": "H9QT1GGBN6-X129", "group": "256 (A group)" },
-  { "ic": "H9QT1G6DN6-X132", "group": "256 (A group)" },      
+  { "ic": "H9QT1G6DN6-X132", "group": "256 (A group)" },
   { "ic": "BBO1-KM2B8001CM", "group": "256 (B group)" },
   { "ic": "H9HQ21AECMAD", "group": "256 (B group)" },
   { "ic": "H9HQ22AECMMD", "group": "256 (B group)" },
@@ -234,7 +234,7 @@
   { "ic": "16emcp08emcp", "group": "305 (group)" },
   { "ic": "B419-KMQ310006B", "group": "305 (group)" },
   { "ic": "B410-KMK8U000VM", "group": "305 (group)" },
-  { "ic": "B419-KMQ310006A", "group": "305 (group)" },          
+  { "ic": "B419-KMQ310006A", "group": "305 (group)" },
   { "ic": "B614-KMRX1000BM", "group": "614 (group)" },
   { "ic": "JZ025", "group": "614 (group)" },
   { "ic": "JZ050", "group": "614 (group)" },
@@ -256,7 +256,7 @@
   { "ic": "B318-KMQD60013M", "group": "614 (group)" },
   { "ic": "B321-KM4X6001KM", "group": "614 (group)" },
   { "ic": "B421-KMGD6001BM", "group": "614 (group)" },
-  { "ic": "B419-KMQX60013A", "group": "614 (group)" },      
+  { "ic": "B419-KMQX60013A", "group": "614 (group)" },
   { "ic": "JY932", "group": "17BA (group)" },
   { "ic": "JY950", "group": "17BA (group)" },
   { "ic": "JZ011", "group": "17BA (group)" },
@@ -319,5 +319,4 @@
   { "ic": "JZ481", "group": "515 (B group)" },
   { "ic": "JZ085", "group": "515 (B group)" },
   { "ic": "JZ442", "group": "515 (B group)" }
-  
 ]
