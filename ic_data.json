@@ -275,50 +275,49 @@
   { "ic": "6580A+ B214-KMFN60012M", "group": "6580A (A group)" },
   { "ic": "6580A+ B305", "group": "6580A (A group)" },
   { "ic": "6580A+ H9TQ64A8GTCC", "group": "6580A (A group)" },
-  { "ic": "6580A+ B214-KMFE10012M", "group": "6580A (A group)" }
-  { "ic": "B425+ (KMDP6001DA)", "group": "515 (A group)" }
-  { "ic": "B425 (KMDP6001DB)", "group": "515 (A group)" }
-  { "ic": "B422 (KMDH6001DM)", "group": "515 (A group)" }
-  
-  { "ic": "B422 (KMDH6001DA)", "group": "515 (A group)" }
-  { "ic": "B424 (KM5P9001DM)", "group": "515 (A group)" }
-  { "ic": "B625 (KMDC6001DM)", "group": "515 (A group)" }
-  { "ic": "H9HP52ACPMMO ic ပုံမှန်ဆိုဒ်", "group": "515 (A group)" }
-  { "ic": "H9HP52ACPMAD ic ပုံမှန်ဆိုဒ်", "group": "515 (A group)" }
-  { "ic": "H9HP53ACPMMD", "group": "515 (A group)" }
-  { "ic": "H9HP52AECMMD ic ပုံမှန်ဆိုဒ်", "group": "515 (A group)" }
-  { "ic": "H9HP52AECMMD", "group": "515 (A group)" }
-  { "ic": "H9HP52ACPMMD", "group": "515 (A group)" }
-  { "ic": "H9HP52AECMMD icအပြားကြီး", "group": "515 (B group)" }
-  { "ic": "B614(KMRH60014A)", "group": "515 (B group)" }
-  { "ic": "B514(KMGP6001BM)", "group": "515 (B group)" }
-  { "ic": "B614(KMRP60014M)", "group": "515 (B group)" }
-  { "ic": "B425 (KMDP60018M)", "group": "515 (B group)" }
-  { "ic": "B518 (KM2H7001CM)", "group": "515 (B group)" }
-  { "ic": "H9HQ53AECMMD", "group": "515 (B group)" }
-  { "ic": "B424 (KM5H8018M)", "group": "515 (B group)" }
-  { "ic": "H9TQ53ACLTMC", "group": "515 (B group)" }
-  { "ic": "B809(KMRC10014M)", "group": "515 (B group)" }
-  { "ic": "H9TQ52ADFTAC", "group": "515 (B group)" }
-  { "ic": "H9HQ53ACPMMD", "group": "515 (B group)" }
-  { "ic": "H9TQ52ACLTMC", "group": "515 (B group)" }
-  { "ic": "H9HQ52ADAMAD", "group": "515 (B group)" }
-  { "ic": "H9AG9G5ANB(X100147A)", "group": "515 (B group)" }
-  { "ic": "B809(KMRH60014M)", "group": "515 (B group)" }
-  { "ic": "Sandisk-64GB(BGA254emmc)", "group": "515 (B group)" }
-  { "ic": "E464M6CM8A", "group": "515 (B group)" }
-  { "ic": "JZ128", "group": "515 (B group)" }
-  { "ic": "JZ177", "group": "515 (B group)" }
-  { "ic": "JZ090", "group": "515 (B group)" }
-  { "ic": "JZ183", "group": "515 (B group)" }
-  { "ic": "JZ185", "group": "515 (B group)" }
-  { "ic": "JZ186", "group": "515 (B group)" }
-  { "ic": "JZ053", "group": "515 (B group)" }
-  { "ic": "JZ109", "group": "515 (B group)" }
-  { "ic": "JZ049", "group": "515 (B group)" }
-  { "ic": "JZ168", "group": "515 (B group)" }
-  { "ic": "JZ481", "group": "515 (B group)" }
-  { "ic": "JZ085", "group": "515 (B group)" }
+  { "ic": "6580A+ B214-KMFE10012M", "group": "6580A (A group)" },
+  { "ic": "B425+ (KMDP6001DA)", "group": "515 (A group)" },
+  { "ic": "B425 (KMDP6001DB)", "group": "515 (A group)" },
+  { "ic": "B422 (KMDH6001DM)", "group": "515 (A group)" },
+  { "ic": "B422 (KMDH6001DA)", "group": "515 (A group)" },
+  { "ic": "B424 (KM5P9001DM)", "group": "515 (A group)" },
+  { "ic": "B625 (KMDC6001DM)", "group": "515 (A group)" },
+  { "ic": "H9HP52ACPMMO ic ပုံမှန်ဆိုဒ်", "group": "515 (A group)" },
+  { "ic": "H9HP52ACPMAD ic ပုံမှန်ဆိုဒ်", "group": "515 (A group)" },
+  { "ic": "H9HP53ACPMMD", "group": "515 (A group)" },
+  { "ic": "H9HP52AECMMD ic ပုံမှန်ဆိုဒ်", "group": "515 (A group)" },
+  { "ic": "H9HP52AECMMD", "group": "515 (A group)" },
+  { "ic": "H9HP52ACPMMD", "group": "515 (A group)" },
+  { "ic": "H9HP52AECMMD icအပြားကြီး", "group": "515 (B group)" },
+  { "ic": "B614(KMRH60014A)", "group": "515 (B group)" },
+  { "ic": "B514(KMGP6001BM)", "group": "515 (B group)" },
+  { "ic": "B614(KMRP60014M)", "group": "515 (B group)" },
+  { "ic": "B425 (KMDP60018M)", "group": "515 (B group)" },
+  { "ic": "B518 (KM2H7001CM)", "group": "515 (B group)" },
+  { "ic": "H9HQ53AECMMD", "group": "515 (B group)" },
+  { "ic": "B424 (KM5H8018M)", "group": "515 (B group)" },
+  { "ic": "H9TQ53ACLTMC", "group": "515 (B group)" },
+  { "ic": "B809(KMRC10014M)", "group": "515 (B group)" },
+  { "ic": "H9TQ52ADFTAC", "group": "515 (B group)" },
+  { "ic": "H9HQ53ACPMMD", "group": "515 (B group)" },
+  { "ic": "H9TQ52ACLTMC", "group": "515 (B group)" },
+  { "ic": "H9HQ52ADAMAD", "group": "515 (B group)" },
+  { "ic": "H9AG9G5ANB(X100147A)", "group": "515 (B group)" },
+  { "ic": "B809(KMRH60014M)", "group": "515 (B group)" },
+  { "ic": "Sandisk-64GB(BGA254emmc)", "group": "515 (B group)" },
+  { "ic": "E464M6CM8A", "group": "515 (B group)" },
+  { "ic": "JZ128", "group": "515 (B group)" },
+  { "ic": "JZ177", "group": "515 (B group)" },
+  { "ic": "JZ090", "group": "515 (B group)" },
+  { "ic": "JZ183", "group": "515 (B group)" },
+  { "ic": "JZ185", "group": "515 (B group)" },
+  { "ic": "JZ186", "group": "515 (B group)" },
+  { "ic": "JZ053", "group": "515 (B group)" },
+  { "ic": "JZ109", "group": "515 (B group)" },
+  { "ic": "JZ049", "group": "515 (B group)" },
+  { "ic": "JZ168", "group": "515 (B group)" },
+  { "ic": "JZ481", "group": "515 (B group)" },
+  { "ic": "JZ085", "group": "515 (B group)" },
   { "ic": "JZ442", "group": "515 (B group)" }
   
 ]
