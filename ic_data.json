@@ -318,5 +318,21 @@
   { "ic": "JZ168", "group": "515 (B group)" },
   { "ic": "JZ481", "group": "515 (B group)" },
   { "ic": "JZ085", "group": "515 (B group)" },
-  { "ic": "JZ442", "group": "515 (B group)" }
+  { "ic": "JZ442", "group": "515 (B group)" },
+  { "ic": "KM3H6001CM-B515 64GB", "group": "515 (1 group)" },
+  { "ic": "KM3H6001CA-B515 64GB", "group": "515 (1 group)" },
+  { "ic": "KMDH6001DM-B422 64GB", "group": "515 (1 group)" },
+  { "ic": "KMDH6001DA-B422 64GB", "group": "515 (1 group)" },
+  { "ic": "KM5P9001DM-B424 64GB", "group": "515 (1 group)" },
+  { "ic": "KMDP6001DA-B425 64GB", "group": "515 (1 group)" },
+  { "ic": "KMDP6001DB-B425 64GB", "group": "515 (1 group)" },
+  { "ic": "KMDC6001DM-B625 64GB", "group": "515 (1 group)" },
+  { "ic": "KM2H7001CM-B518 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP52ACPMMO (ICအသေး:) 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP52ACPMAD (ICအသေး:) 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP53ACPMMD 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP52AECMMD 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP52AECMMD (ICအသေး:) 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP53AECMMD 64GB", "group": "515 (1 group)" },
+  { "ic": "H9HP52ACPMMD 64GB", "group": "515 (1 group)" }
 ]
