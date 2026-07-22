@@ -886,6 +886,7 @@
   {"ic": "B708-KM3V6001CA", "group": "705 (B group)"},
   {"ic": "B705-KM3V6001CM", "group": "705 (B group)"},
   {"ic": "B706-KM2V7001CM", "group": "705 (B group)"},
+  {"ic": "YMUS8A4TB3A2C1", "group": "Mi 128 group"},
   {"ic": "E-ROCKIC E41208AMEA", "group": "705 (B group)"},
   { "ic": "H9HP52ACPMMD 64GB", "group": "515 (1 group)" }
 ]
