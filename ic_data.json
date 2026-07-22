@@ -1,4 +1,6 @@
 [
+  { "ic": "B816-KM8F9001JA", "group": "256 (A group)" },
+  { "ic": "H9HQ21AFAMAD", "group": "256 (A group)" },
   { "ic": "H9HQ22AFAMD", "group": "256 (A group)" },
   { "ic": "BCO1-KM8B8001JM", "group": "256 (A group)" },
   { "ic": "BCO2-KMAS9001PM", "group": "256 (A group)" },
