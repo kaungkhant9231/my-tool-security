@@ -889,4 +889,12 @@
   {"ic": "YMUS8A4TB3A2C1", "group": "Mi 128 group"},
   {"ic": "E-ROCKIC E41208AMEA", "group": "705 (B group)"},
   { "ic": "H9HP52ACPMMD 64GB", "group": "515 (1 group)" }
+  { "ic": "B424 KM5P8001DM", "group": "515 (A group)" }
+  { "ic": "B424 KM5H7001DM", "group": "515 (A group)" }
+  { "ic": "B625 KMDC6001DM", "group": "515 (A group)" }
+  { "ic": "H9AG9G5ANB(X100124Y)", "group": "515 (B group)" }
+  { "ic": "H9AG9G5ANB(X100147Y)", "group": "515 (B group)" }
+  { "ic": "B614 KMRH60014M", "group": "515 (B group)" }
+  { "ic": "H9AG9G5ANB X100", "group": "515 (C group)" }
+  { "ic": "H9HP52ADAMAD", "group": "515 (C group)" }
 ]
